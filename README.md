@@ -56,7 +56,7 @@ Exemplo simples de código para utilizar uma relação many to many com Eloquent
 
  3.1 Modelo: Pessoa
  	
- 	// App/Pessoa.php
+        // App/Pessoa.php
         class Pessoa extends Model
         {
     	    protected $table = 'pessoas';
@@ -71,18 +71,17 @@ Exemplo simples de código para utilizar uma relação many to many com Eloquent
     
  3.2 Modelo: Grupo
 
-	// App/Grupo.php
-        class Grupo extends Model
-        {
-            protected $table = 'grupos';
-
-            protected $fillable = ['descricao'];
+       // App/Grupo.php
+       class Grupo extends Model
+       {
+           protected $table = 'grupos';
+           protected $fillable = ['descricao'];
 
             public function pessoas()
-            {
-                return $this->belongsToMany('App\Pessoa', 'pessoa_grupo');
-            }
-        }
+           {
+               return $this->belongsToMany('App\Pessoa', 'pessoa_grupo');
+           }
+       }
 
 
 4. Cria dados fictícios
